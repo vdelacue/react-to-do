@@ -15,6 +15,12 @@ class App extends Component {
         };
     }
     
+    deleteTodo() {
+        const newListOfTodos = this.state.todos.filter();
+        const todoToRemove = todos[index];
+        this.setState({ newListOfTodos: newListOfTodos})
+    }
+    
     handleChange(e) {
         this.setState({ newTodoDescription: e.target.value })
     }
