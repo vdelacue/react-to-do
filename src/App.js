@@ -7,18 +7,25 @@ class App extends Component {
         super(props);
         this.state = {
             todos: [
-                { description: 'Walk the cat', isCompleted: true },
-                { description: 'Throw the dishes away', isCompleted: false },
-                { description: 'Buy new dishes', isCompleted: false }
+                { description: 'Walk the cat ', isCompleted: true },
+                { description: 'Throw the dishes away ', isCompleted: false },
+                { description: 'Buy new dishes ', isCompleted: false }
             ],
             newTodoDescription: ''
         };
     }
     
-    deleteTodo() {
-        const newListOfTodos = this.state.todos.filter();
-        const todoToRemove = todos[index];
-        this.setState({ newListOfTodos: newListOfTodos})
+    deleteTodo(todoToDelete) {
+        const todos = this.state.todos;
+        let newTodoArray = todos.filter(todo => todo !== todoToDelete);
+        this.setState({ todos: newTodoArray});
+        
+//        const todos = this.state.todos.filter();
+//        const todo = todos[index];
+//        todo.isDeleted = todo.isDeleted ? false : true;
+//        this.setState({ todos: todos})
+        
+//        console.log(newTodoArray);
     }
     
     handleChange(e) {
